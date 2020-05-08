@@ -4,7 +4,14 @@ Introductory material to getting started with BlazingSQL.
 
 Why would you need something like BlazingSQL? Many a times, large amounts of data is not installed
 on your local computer, chances are the data is living in some kind of external storage e.g. cloud storage
-or NAS.
+or NAS. Considering that the data is already on some kind of storage, you
+probably would be wondering if analyzing the datasets needs a SQL-like
+database? TLDR version is **`no`** and that's the beauty of blazingsql - you
+can run SQL-like queries against the datasets without actually using a
+database.
+
+What's even better is that you can re-use/integrate your favourite machine
+learning or deep learning libraries and conduct the data analysis.
 
 This repository is sourced mostly from the rapidsai teams where they've actively working on delivering BSQL
 to the community. Their github repository is [here](https://github.com/BlazingDB/blazingsql).
@@ -31,3 +38,8 @@ Refer to this [pricing page](https://aws.amazon.com/ec2/pricing/on-demand/) on
 EC2 to select which GPU suits you.
 
 
+### Reference
+
+* [CUDA](https://developer.nvidia.com)
+* [BlazingSQL main site](https://blazingsql.com)
+* [BlazingSQL repository](https://github.com/BlazingDB/blazingsql)
