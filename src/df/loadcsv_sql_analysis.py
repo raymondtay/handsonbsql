@@ -38,6 +38,8 @@ def main():
     global bc
     df = cudf.read_csv('../data/sample_taxi.csv')
     bc.create_table('taxi', df)
+    print('#> Dataset is loaded into table \'taxi\' on the GPU')
+
     query = '''
 select cast(substring(tpep_pickup_datetime,0,10) || ' 00:00:00' as timestamp) as pickup_date,
        count(*) as all_trips,
@@ -47,7 +49,7 @@ from taxi
     group by cast(substring(tpep_pickup_datetime,0,10) || ' 00:00:00' as timestamp)
     order by cast(substring(tpep_pickup_datetime,0,10) || ' 00:00:00' as timestamp) limit 10
 '''
-    bc.sql(query)
+    print('#> Query is run against GPU: {}'.format(bc.sql(query)))
     
 
 if __name__ == "__main__":

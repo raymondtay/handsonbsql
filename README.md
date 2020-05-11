@@ -26,6 +26,19 @@ installed. The code repository is organized as follows:
 (a) everything in the root directory are stuff to get you started
 (b) everything in the `df` sub-directory is for understanding a little bit more about `cudf.DataFrame`
 
+### Git Large File System
+
+I'm using the `git lfs` to store large amounts of data since github isn't
+the right place for this kind of data. This is a good solution if you do not
+wish to maintain data on cloud storages.
+
+To install `git lfs` on Ubuntu 18.04, i've found these instructions to be
+useful, lifted from this [site](https://github.com/git-lfs/git-lfs/wiki/Installation):
+
+* `curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash`
+* `sudo apt-get install git-lfs`
+* `git lfs install`
+
 ## Supported Nvidia GPU architecture
 
 As of May 2020, the support GPU for _BlazingSql_ is of _compute capability_ `>=
