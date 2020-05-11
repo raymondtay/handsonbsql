@@ -18,8 +18,8 @@ def main():
 
     """
     global bc
-    bc.log('select * from bsql_logs').head()
-    bc.log("select log_time, query_id, duration from bsql_logs where info = 'Query Execution Done' order by log_time DESC")
+    print('#> Most recent logs: {}'.format(bc.log('select * from bsql_logs').head()))
+    print('#> Execution times of MRU-completed queries: {}'.format(bc.log("select log_time, query_id, duration from bsql_logs where info = 'Query Execution Done' order by log_time DESC")))
     discover_totaltime_query_execution()
     compute_execution_times_frequent_queries()
 
@@ -40,10 +40,10 @@ def compute_execution_times_frequent_queries():
             times.query_id, times.avg_time,
             times.max_time as query_duration,
             times.min_time,
-            ral.relational_algbera as relational_algebra
+            ral.relational_algebra as relational_algebra
         from (
             select query_id,
-                max(long_time) as end_time,
+                max(log_time) as end_time,
                 sum(duration)/count(duration) as avg_time,
                 min(duration) as min_time,
                 max(duration) as max_time
@@ -55,7 +55,7 @@ def compute_execution_times_frequent_queries():
         ) as ral on times.query_id = ral.query_id order by times.end_time desc
     ) as temp group by relational_algebra
     '''
-    bc.log(query)
+    print('#> Data execution times for frequent queries {}'.format(bc.log(query)))
 
 
 def discover_totaltime_query_execution():
@@ -79,7 +79,7 @@ def discover_totaltime_query_execution():
                          group by node_id, query_id
     ) group by query_id order by end_time desc
     '''
-    bc.log(log_query)
+    print('#> Data load times (DESC order): {}'.format(bc.log(log_query)))
 
  
 if __name__ == "__main__":

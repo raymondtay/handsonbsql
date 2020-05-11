@@ -44,10 +44,12 @@ def main():
     """
     global bc
     bc.s3('blazingsql-colab', bucket_name='blazingsql-colab')
-    
+    print('#> Connection to AWS S3...') 
+
     bc.create_table('taxi', 's3://blazingsql-colab/yellow_taxi/taxi_data.parquet')
+    print('#> Discovered table on AWS S3')
     
-    bc.sql('SELECT passenger_count, trip_distance FROM taxi LIMIT 2')
+    print('#> Running query against GPU: {}'.format(bc.sql('SELECT passenger_count, trip_distance FROM taxi LIMIT 2')))
 
 if __name__ == "__main__":
     main()

@@ -4,11 +4,11 @@ import cudf, os
 bc = BlazingContext()
 
 def all_trips_lt_10():
-"""Summary
-   Assumes that the sample_data.csv data is loaded into "bc",
-   a query is being asked of the GPU by selecting every trip that is
-   less than 10
-"""
+    """Summary
+       Assumes that the sample_data.csv data is loaded into "bc",
+       a query is being asked of the GPU by selecting every trip that is
+       less than 10
+    """
     global bc
     df = bc.sql('select * from taxi where trip_distance < 10')
     df.describe()

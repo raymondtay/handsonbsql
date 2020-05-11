@@ -37,8 +37,10 @@ def main():
     
     
     bc.create_table('game_1', df)
-    
-    bc.sql('SELECT * FROM game_1 WHERE val > 4')
+    print('#> Data table created on GPU with test dataset...')
+
+    query = 'SELECT * FROM game_1 WHERE val > 4'
+    print('#> Running query against GPU: {}'.format(bc.sql('SELECT * FROM game_1 WHERE val > 4')))
 
 
 if __name__ == "__main__":
