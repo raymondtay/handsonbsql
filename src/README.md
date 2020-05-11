@@ -18,6 +18,5 @@ use since it lacks a test harness.
 * [03_explainplan_create_query_s3_table.py](./03_explainplan_create_query_s3_table.py)
 * [df/loadcsv_sql_analysis.py](./df/loadcsv_sql_analysis.py)
 * [df/log_analysis.py](./df/log_analysis.py)
-
-
+* [ml/predict_taxi_fare.py](./data/predict_taxi_fare.py)
 
