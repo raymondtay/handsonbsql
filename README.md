@@ -19,6 +19,13 @@ to the community. Their github repository is [here](https://github.com/BlazingDB
 Why don't i just run the examples found on their juypter notebooks co-lab environment? Sure you can, but
 i prefer to work directly with the code.
 
+## Recordings
+
+See `BlazingSQL` in action. The following 2 recordings _should be_ watched side-by-side so that you can observe the resource consumption while the programs are executing.
+[![asciicast](https://asciinema.org/a/iWf1fNndRmeRMixCzlxatjdZ7.png)](https://asciinema.org/a/iWf1fNndRmeRMixCzlxatjdZ7)
+[![asciicast](https://asciinema.org/a/nu17IGDTpiMkxLN9xWSEh2lNR.png)](https://asciinema.org/a/nu17IGDTpiMkxLN9xWSEh2lNR)
+
+
 ## Context
 
 These demo code is run ontop of AWS EC2 Tesla V100 GPUs, CUDA Toolkit 10.2.89
